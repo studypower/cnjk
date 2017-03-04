@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+
+	<!-- 继承struts-default.xml,并加入工程自定义的相关功能配置 -->
+	<include file="struts-default.xml" />
+	<include file="config-browser.xml" />
+
+	<!-- 定义struts默认的拦截器和其他功能配置 -->
+	<package name="default" extends="struts-default">
+		<interceptors>
+			<!-- 基础拦截器 -->
+			<interceptor-stack name="yakovStack">
+				<interceptor-ref name="servlet-config" />
+				<interceptor-ref name="model-driven" />
+				<interceptor-ref name="params" />
+			</interceptor-stack>
+			<interceptor name="loginLimits" class="com.disease_control.core.interceptor.LoginLimits" />
+			<interceptor name="adminLimits" class="com.disease_control.core.interceptor.AdminLimits" />
+			<interceptor name="accessControlLimits" class="com.disease_control.core.interceptor.AccessControlLimits" />
+		</interceptors>
+
+		<global-results>
+			<result type="freemarker" name="login">/page/login.ftl</result>
+			<result type="freemarker" name="mainLogin">/page/main_login.ftl</result>
+			<result type="freemarker" name="illegalAccess">/page/illegal_access.ftl</result>
+		</global-results>
+	</package>
+	
+	<include file="conf/struts/login-struts.xml"></include>
+	<include file="conf/struts/rygl-struts.xml"></include>
+	<include file="conf/struts/xtsz-struts.xml"></include>
+	<include file="conf/struts/dzgzd-struts.xml"></include>
+	<include file="conf/struts/jfgl-struts.xml"></include>
+	<include file="conf/struts/hysgl-struts.xml"></include>
+	<include file="conf/struts/clgl-struts.xml"></include>
+	<include file="conf/struts/gysgl-struts.xml"></include>
+	<include file="conf/struts/wpcg-struts.xml"></include>
+	<include file="conf/struts/gdzcgl-struts.xml"></include>
+	<include file="conf/struts/oagl-struts.xml"></include>
+</struts>
+

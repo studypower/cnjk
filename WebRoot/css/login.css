@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Login */
+#loginbox{ border: 1px solid #999999; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 10px rgba(189, 189, 189, 0.4); height:200px; margin:100px auto; text-align: left; width: 350px;}
+#loginbox .titlelogin{font-family: "微软雅黑"; font-size: 18px; font-weight:normal; line-height: 28px; color:#000; text-align:center; display: block; padding-right:10px;}
+#loginbox table{ margin:20px auto;}
+#loginbox table td{ line-height:40px; color:#666;}
+#loginbox .tiprad{ color:#C00;}
+#loginbox label{ font-size:12px; color:#999px;}
+.btn_03 { cursor:hand}

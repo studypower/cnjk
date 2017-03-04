@@ -1,0 +1,368 @@
+<div style="overflow:hidden;">
+					　<div id="navigation" class="navigationDiv">
+							    <!--  车辆管理子菜单  start  -->
+								<div id="clgl" class="secondMenuDiv hideDiv">
+	  								<ul class="nav">
+	  								 <#if isDisplay('1_1')>
+	  									<li>
+	  										<a href="javascript:void(0);" onclick="javascript:showSubMenu('applyCarUl');">用车申请</a>
+	  										<ul id="applyCarUl">
+	  										 	<#if isDisplay('1_1_2')>
+											 	<li>
+											     	<a href="${gzUrl('clgl/ycsq/initCalendar.do')}" target="content">点击发起申请</a>
+											 	</li>
+											 	</#if>
+											  	<li>
+											     	<a href="${gzUrl('clgl/ycsq/initList.do')}" target="content">用车申请记录</a>
+											 	</li>
+									      	</ul>
+	  									</li>
+	  								 </#if>	
+	  								</ul>
+	  								<ul class="nav">
+	  								  <#if isDisplay('1_2_1')>
+	  									<li><a href="${gzUrl('clgl/clxx/initList.do')}" target="content">车辆管理</a></li>
+	  								   </#if>	
+	  								</ul>
+	  							</div>
+	  							<!--  车辆管理子菜单  end  -->
+	  							
+	  							<!--  会议室管理子菜单    start  -->
+	  							<div id="hysgl" class="secondMenuDiv hideDiv">
+  							 		<#if isDisplay('8_1')>
+  										<ul class="nav">
+  											<li>
+  												<a href="javascript:void(0);" onclick="javascript:showSubMenu('applyMeetingUl');">会议室申请</a>
+  												<ul id="applyMeetingUl">
+  													<#if isDisplay('8_1_2')>
+											 			<li>
+											     			<a href="${gzUrl('hysgl/sq/initCalendar.do')}" target="content">点击发起申请</a>
+											 			</li>
+										 			</#if>
+										  			<li>
+										     			<a href="${gzUrl('hysgl/sq/initList.do')}" target="content">会议室申请记录</a>
+										 			</li>
+								      			</ul>
+  											</li>
+  										</ul>
+  									</#if>
+  									<#if isDisplay('8_2')>
+  										<ul class="nav">
+  											<li>
+  												<a href="${gzUrl('hysgl/xxwh/initList.do')}" target="content">会议室管理</a>
+  											</li>
+  										</ul>
+  									</#if>
+  									<#if isDisplay('8_3')>
+  										<ul class="nav">
+  								    		<li>
+  												<a href="javscript:void(0);" onclick="javascript:showSubMenu('dictionarySettingUl3');">数据字典设置</a>
+  												<ul id="dictionarySettingUl3">
+													<li>
+														<a href="${gzUrl('xtsz/sjzd/hyssj/initList.do')}" target="content">
+															会议室实用时间设置
+														</a>
+													</li>
+													<li>
+														<a href="${gzUrl('xtsz/sjzd/hyssb/initList.do')}" target="content">
+															会议室设备设置
+														</a>
+													</li>
+												</ul>
+  											</li>	
+  							    		</ul>
+  							    	</#if>
+  								</div>
+  								<!--  会议室管理子菜单    end  -->
+  								
+  								<!--  电子工资单            start  -->
+  								<div id="dzgzd" class="secondMenuDiv hideDiv">
+	  								<ul class="nav">
+	  									<li>
+	  									  <#if isDisplay('6_1_1')>
+									     		<a href="${gzUrl('dzgzd/gzdgl/gzdmbxz/initList.do')}" target="content">工资单模板</a>
+									      </#if>	
+									 	</li>
+									  	<li>
+									  	  <#if isDisplay('6_2_1')>
+									     		<a href="${gzUrl('dzgzd/gzdgl/gzdpc/initList.do')}" target="content">工资单管理</a>
+									      </#if>		
+									 	</li>
+									 	<li>
+									 	  <#if isDisplay('6_3_1')>
+									     		<a href="${gzUrl('dzgzd/wdgzd/initList.do')}" target="content">我的工资单</a>
+									       </#if>	
+									 	</li>
+									  	<li>
+									  	   <#if isDisplay('6_4_1')>
+									     		<a href="${gzUrl('dzgzd/wdgzd/initListByTable.do')}" target="content">工资单查询</a>
+									       </#if>		
+									 	</li>
+									 	<li>
+									  	   <#if isDisplay('6_5')>
+									     		<a href="${gzUrl('dzgzd/gzdtj/initWageSum.do')}" target="content">我的工资单总计</a>
+									       </#if>		
+									 	</li>
+									 	<li>
+									  	   <#if isDisplay('6_6')>
+									     		<a href="${gzUrl('dzgzd/gzdtj/initWageSumList.do')}" target="content">工资单总计</a>
+									       </#if>		
+									 	</li>
+									 	<li>
+									  	   <#if isDisplay('6_7')>
+									     		<a href="${gzUrl('dzgzd/gzdtj/initColumnSumList.do')}" target="content">工资单明细总计</a>
+									       </#if>		
+									 	</li>
+	  								</ul>
+  							   </div>
+  							   <!--  电子工资单        end  -->
+  								
+  							   <!--  人员管理              start -->
+  							   <div id="rygl" class="secondMenuDiv hideDiv">
+	  								<ul class="nav">
+		  								  <#if isDisplay('7_1_1')>	
+		  										<li>
+		  											<a href="${gzUrl('rygl/jbxx/initList.do')}" target="content">职工基本信息</a>
+		  										</li>
+		  								  </#if>
+		  								  <#if isDisplay('7_2')>		
+		  										<li>
+		  											<a href="${gzUrl('rygl/fgfw/initList.do')}" target="content">分管范围设置</a>
+		  										</li>
+		  								  </#if>
+		  								  <#if isDisplay('7_3')>	
+		  									<li>
+		  										<a href="javascript:void(0);" onclick="javascript:showSubMenu('departmentSettingUl');" >科室职位设置</a>
+		  										<ul id="departmentSettingUl">
+		  											<li>
+		  												<a href="${gzUrl('xtsz/bmgl/initList.do?baseId=0')}" target="content">科室管理</a>
+		  											</li>
+		  											<li>
+		  												<a href="${gzUrl('xtsz/zwgl/initList.do')}" target="content">职位管理</a>
+		  											</li>
+		  										</ul>
+		  									</li>
+		  								  </#if>
+		  								  <#if isDisplay('7_4')>
+			  								  	<li>
+			  										<a href="javascript:void(0);" onclick="javascript:showSubMenu('dictionarySettingUl6');">数据字典设置</a>
+			  										<ul id="dictionarySettingUl6">
+														<li>
+															<a href="${gzUrl('xtsz/sjzd/gzzt/initList.do')}" target="content">工作状态设置</a>
+														</li>
+														<li>
+															<a href="${gzUrl('xtsz/sjzd/mzsz/initList.do')}" target="content">民族设置</a>
+														</li>
+														<li>
+															<a href="${gzUrl('xtsz/sjzd/zcsz/initList.do')}" target="content">职称设置</a>
+														</li>
+														<li>
+															<a href="${gzUrl('xtsz/sjzd/zcjbsz/initList.do')}" target="content">职称级别设置</a>
+														</li>
+														<li>
+															<a href="${gzUrl('xtsz/sjzd/zzmmsz/initList.do')}" target="content">政治面貌设置</a>
+														</li>
+														<li>
+															<a href="${gzUrl('xtsz/sjzd/whcdsz/initList.do')}" target="content">文化程度设置</a>
+														</li>
+													</ul>
+			  									</li>
+		  								   </#if>
+	  								</ul>
+  								</div>
+  							   <!--  人员管理              end   -->
+  							   
+  							   <!-- 考勤管理            start     -->
+  							   <div id="kqgl" class="secondMenuDiv hideDiv">
+	  								<ul class="nav">
+	  									<#if isDisplay('10_5')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/kqsy/kqsy.do')}" target="content">考勤首页</a>
+		  									</li>
+		  								</#if>
+	  									<#if isDisplay('10_4')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/glgn/ztwh.do')}?my=true&forEdit=true&gotoType=leftMenu" target="content">我的状态</a>
+		  									</li>
+	  									</#if>
+		  								<#if isDisplay('10_1')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/glgn/ztwh.do')}?my=search" target="content">状态日历查询</a>
+		  									</li>
+		  								</#if>
+		  								<#if isDisplay('10_2')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/glgn/ztwh.do')}" target="content">状态日历维护</a>
+		  									</li>
+		  								</#if>
+		  								<#if isDisplay('10_3')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/glgn/gzrgl.do')}" target="content">工作日管理</a>
+		  									</li>
+		  								</#if>
+	  								 </ul>
+  							 	</div>
+  							   <!-- 考勤管理            end     -->
+  							   
+  							   <!-- 值班管理        start     -->
+  							   <div id="zbgl" class="secondMenuDiv hideDiv">
+	  								<ul class="nav">
+		  								<#if isDisplay('11_1')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/zhcx/initZbList.do')}" target="content">值班综合查询</a>
+		  									</li>
+		  								</#if>
+		  								<#if isDisplay('11_2')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/zhcx/initZbftj.do')}" target="content">值班费统计</a>
+		  									</li>
+		  								</#if>
+		  								<#if isDisplay('11_3')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/zhcx/initTxdtjList.do')}" target="content">调休单统计</a>
+		  									</li>
+		  								</#if>
+		  								<#if isDisplay('11_4')>
+		  									<li>
+		  										<a href="javascript:void(0);" onclick="javascript:showSubMenu('zbTeamBizUI');">值班小组维护</a>
+		  										<ul id="zbTeamBizUI">
+		  											<#if isDisplay('11_4_1')><li><a href="${gzUrl('oagl/glgn/zbTeamBiz.do')}?dutyType=1"  target="content">值班领导名单维护</a></li></#if>
+		  											<#if isDisplay('11_4_1')><li><a href="${gzUrl('oagl/glgn/zbTeamBizRule.do')}?dutyType=1" target="content">值班领导排班</a></li></#if>
+		  											<#if isDisplay('11_4_2')><li><a href="${gzUrl('oagl/glgn/zbTeamBiz.do')}?dutyType=2" target="content">听班小分队名单维护</a></li></#if>
+		  											<#if isDisplay('11_4_2')><li><a href="${gzUrl('oagl/glgn/zbTeamBizRule.do')}?dutyType=2" target="content">听班小分队排班</a></li></#if>
+		  											<#if isDisplay('11_4_3')><li><a href="${gzUrl('oagl/glgn/zbTeamBiz.do')}?dutyType=3" target="content">总值班名单维护</a></li></#if>
+		  											<#if isDisplay('11_4_3')><li><a href="${gzUrl('oagl/glgn/zbTeamBizRule.do')}?dutyType=3" target="content">总值班排班</a></li></#if>
+	  											</ul>
+		  									</li>
+		  								</#if>
+		  								<#if isDisplay('11_5')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/glgn/zbrlwh.do')}" target="content">值班日历维护</a>
+		  									</li>
+		  								</#if>
+	  								 </ul>
+  								</div>
+  							   <!-- 值班管理        end     -->
+  							   
+  							   <!-- 通知公告      start  -->
+  							   <div id="tzgg" class="secondMenuDiv hideDiv">
+	  								<ul class="nav">
+	  									<#if isDisplay('12')>
+		  									<li>
+		  										<a href="${gzUrl('oagl/tzgg/initList.do')}" target="content">通知公告</a>
+		  									</li>
+	  									</#if>
+	  								</ul>
+  								</div>
+  							   <!-- 通知公告      end  -->
+  								
+  							   <!-- 系统设置    start   -->
+  							   	<div id="xtsz" class="secondMenuDiv hideDiv">
+	  								<ul class="nav">
+	  									<li>
+	  										<a href="${gzUrl('xtsz/dhsz/initList.do')}" target="content">导航设置</a>
+	  									</li>
+	  									<li>
+	  										<a href="${gzUrl('xtsz/jssz/initList.do')}" target="content">权限设置</a>
+	  									</li>
+	  									<li>
+	  										<a href="${gzUrl('xtsz/yhgl/initList.do')}" target="content">帐号设置</a>
+	  									</li>
+	  									<li>
+	  										<a href="javascript:void(0);" onclick="javascript:showSubMenu('salaryOrderSettingUl');">工资单设置</a>
+	  										<ul id="salaryOrderSettingUl">
+	  											<li>
+	  												<a href="${gzUrl('xtsz/gzdsz/jczdsz/initList.do')}" target="content">
+	  													基础字段设置
+	  												</a>
+	  											</li>
+	  											<li>
+	  												<a href="${gzUrl('xtsz/gzdsz/djmbsz/initList.do')}" target="content">
+	  													工资单据模板设置
+	  												</a>
+	  											</li>
+	  										</ul>
+	  									</li>
+	  									<li>
+	  										<a href="${gzUrl('/oagl/gzsjdsz/initList.do')}" target="content">工作时间段设置</a>
+	  									</li>
+	  									<li>
+	  										<a href="${gzUrl('/oagl/baseMoney/toList.do')}" target="content">薪水基数设置</a>
+	  									</li>
+	  								 </ul>
+  								 </div>
+  							   <!-- 系统设置    end   -->
+						</div>
+					<!--                 Left Menu 左侧菜单              end              -->
+					
+					
+					
+					
+					
+				<!-- Left Menu 左侧菜单              start-->
+				
+				
+				<div class="nav" id="navigation">
+				<div class="center-nav">
+					<div class="center-navi">
+						<div>
+							<img class="pull-left" src="img/defUser.png" />
+							<div class="pull-left">
+								<p>欢迎您：admin</p>
+								<p style="margin: 0;" id="nowDate"></p>
+							</div>
+						</div>
+						<ul class="list-unstyled nav-list" id="hysgl">
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-gift"></span>会议室申请</a>
+								<ul class="list-unstyled nav-children">
+									<li>● <span>发起申请</span></li>
+									<li>● <span>申请记录</span></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-calendar"></span>会议室管理</a>
+							</li>
+							<li>
+								<a href="#"><span class="glyphicon glyphicon glyphicon-list-alt"></span>数据宇典设置</a>
+								<ul class="list-unstyled nav-children">
+									<li>● <span>会议室实用时间设置</span></li>
+									<li>● <span>会议室设备设置</span></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="list-unstyled nav-list" id="clgl">
+						 <#if isDisplay('1_1')>
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-gift"></span>用车申请</a>
+								<ul class="list-unstyled nav-children">
+									<li>● <span>点击发起申请</span></li>
+									<li>● <span>用车申请记录</span></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-calendar"></span>车辆管理</a>
+							</li>
+							</#if>
+						</ul>
+						
+						<ul class="list-unstyled nav-list" id="clgl">
+							<li>
+								<a href="javascript:void(0)"><span class="glyphicon glyphicon-gift"></span>用车申请</a>
+								<ul class="list-unstyled nav-children">
+								   <#if isDisplay('1_1_2')>
+									<li><a href="${gzUrl('clgl/ycsq/initCalendar.do')}" target="content">● <span>点击发起申请</span></a></li>
+									</#if>
+									<li>● <span>用车申请记录</span></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-calendar"></span>车辆管理</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+				
+				
+					

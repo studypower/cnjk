@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!-- 系统设置-权限管理 -->
+	<package name="xtsz_dhsz" extends="default" namespace="/xtsz/dhsz">
+		<action name="initList" class="com.disease_control.web.action.xtsz.MenuInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/dhsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.MenuInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.MenuInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/dhsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.MenuInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/dhsz/initList.do</result>
+			<result name="error">/xtsz/dhsz/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.MenuInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/dhsz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.MenuInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/dhsz/initList.do</result>
+			<result name="error">/xtsz/dhsz/initUpdate.do</result>
+		</action>
+
+		<action name="del" class="com.disease_control.web.action.xtsz.MenuInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/dhsz/initList.do</result>
+			<result name="error">/xtsz/dhsz/initList.do</result>
+		</action>
+
+	</package>
+
+	<!-- 系统设置-用户管理 -->
+	<package name="xtsz_yhgl" extends="default" namespace="/xtsz/yhgl">
+		<action name="initList" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/yhgl/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/yhgl/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/yhgl/initList.do</result>
+			<result name="error">/xtsz/yhgl/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/yhgl/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/yhgl/initList.do</result>
+			<result name="error">/xtsz/yhgl/initUpdate.do</result>
+		</action>
+
+		<action name="del" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="del">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/yhgl/initList.do</result>
+		</action>
+
+		<action name="initUpdatePwd" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="initUpdatePwd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/xtsz/yhgl/updatePwd.ftl</result>
+		</action>
+
+		<action name="updatePwd" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="updatePwd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="error">/page/xtsz/yhgl/updatePwd.ftl</result>
+			<result type="freemarker" name="success">/page/xtsz/yhgl/updatePwd.ftl</result>
+		</action>
+		
+		<action name="unbundling" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="unbundling">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="status" class="com.disease_control.web.action.xtsz.yhgl.UserInfoAction" method="status">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+	</package>
+
+	<!-- 系统设置-角色管理 -->
+	<package name="xtsz_jssz" extends="default" namespace="/xtsz/jssz">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/jssz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/jssz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/jssz/initList.do</result>
+			<result name="error">/xtsz/jssz/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/jssz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/jssz/initList.do</result>
+			<result name="error">/xtsz/jssz/initUpdate.do</result>
+		</action>
+
+		<action name="del" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="del">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/jssz/initList.do</result>
+		</action>
+		
+		<action name="getRoleMenuList" class="com.disease_control.web.action.xtsz.jssz.RoleInfoAction" method="getRoleMenuList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+	</package>
+
+	<!-- 部门管理 -->
+	<package name="xtsz_bmgl" extends="default" namespace="/xtsz/bmgl">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/bmgl/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/bmgl/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/bmgl/initList.do</result>
+			<result name="error">/xtsz/bmgl/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/bmgl/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/bmgl/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/bmgl/initList.do</result>
+			<result name="error">/xtsz/bmgl/initUpdate.do</result>
+		</action>
+		
+        <action name="updateStatus" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="updateStatus">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/bmgl/initList.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.bmgl.DepartmentInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/bmgl/initList.do</result>
+			<result name="error">/xtsz/bmgl/initList.do</result>
+		</action>
+	</package>
+
+	<!-- 部门职位管理 -->
+	<package name="xtsz_bmgl_zw" extends="default" namespace="/xtsz/bmgl/zw">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.bmgl.DepartmentPositionAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/xtsz/bmgl/zw/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.bmgl.DepartmentPositionAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.bmgl.DepartmentPositionAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/xtsz/bmgl/zw/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.bmgl.DepartmentPositionAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/xtsz/bmgl/zw/initList.do</result>
+			<result name="error">/xtsz/bmgl/zw/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.bmgl.DepartmentPositionAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/xtsz/bmgl/zw/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.bmgl.DepartmentPositionAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/xtsz/bmgl/zw/initList.do</result>
+			<result name="error">/xtsz/bmgl/zw/initUpdate.do</result>
+		</action>
+
+		<action name="del" class="com.disease_control.web.action.xtsz.bmgl.DepartmentPositionAction" method="del">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/xtsz/bmgl/zw/initList.do</result>
+		</action>
+
+	</package>
+
+	<!-- 职位设置 -->
+	<package name="xtsz_zwgl" extends="default" namespace="/xtsz/zwgl">
+		<action name="ajaxList" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="ajaxList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/xtsz/zwgl/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/xtsz/zwgl/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/xtsz/zwgl/initList.do</result>
+			<result name="error">/xtsz/zwgl/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/xtsz/zwgl/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/xtsz/zwgl/initList.do</result>
+			<result name="error">/xtsz/zwgl/initUpdate.do</result>
+		</action>
+
+		<action name="updateStatus" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="updateStatus">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/xtsz/zwgl/initList.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.PositionInfoAction" method="del">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+	</package>
+	
+	<package name="xtsz_gzdsz_jczdsz" extends="default" namespace="/xtsz/gzdsz/jczdsz">
+		<action name="initList" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/jczdsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/jczdsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/jczdsz/initList.do</result>
+			<result name="error">/xtsz/gzdsz/jczdsz/initAdd.do</result>
+		</action>
+		
+		<action name="delete" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="delete">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/jczdsz/initList.do</result>
+		</action>
+		
+		<action name="status" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="status">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/jczdsz/initList.do</result>
+		</action>
+		
+		<action name="info" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="info">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/jczdsz/info.ftl</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/jczdsz/update.ftl</result>
+		</action>
+		
+		<action name="update" class="com.disease_control.web.action.xtsz.gzdsz.jczdsz.PayrollColumnInfoAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/jczdsz/initList.do</result>
+			<result name="error">/xtsz/gzdsz/jczdsz/initUpdate.do</result>
+		</action>
+		
+	</package>
+	
+	<package name="xtsz_gzdsz_djmbsz" extends="default" namespace="/xtsz/gzdsz/djmbsz">
+		<action name="initList" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/djmbsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/djmbsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/initList.do</result>
+			<result name="error">/xtsz/gzdsz/djmbsz/initAdd.do</result>
+		</action>
+		
+		<action name="build" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="build">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/initList.do</result>
+		</action>
+		
+		<action name="status" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="status">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/initList.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/djmbsz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollTableInfoAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/initList.do</result>
+			<result name="error">/xtsz/gzdsz/djmbsz/initUpdate.do</result>
+		</action>
+	</package>
+	
+	<package name="xtsz_gzdsz_djmbsz_mbzd" extends="default" namespace="/xtsz/gzdsz/djmbsz/mbzd">
+		<action name="initList" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/djmbsz/mbzd/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/djmbsz/mbzd/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/mbzd/initList.do</result>
+			<result name="error">/xtsz/gzdsz/djmbsz/mbzd/initAdd.do</result>
+		</action>
+		
+		<action name="delete" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="delete">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/mbzd/initList.do</result>
+		</action>
+		
+		<action name="status" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="status">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/mbzd/initList.do</result>
+		</action>
+		
+		<action name="info" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="info">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/djmbsz/mbzd/info.ftl</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/gzdsz/djmbsz/mbzd/update.ftl</result>
+		</action>
+		
+		<action name="update" class="com.disease_control.web.action.xtsz.gzdsz.djmbsz.PayrollColumnInfoAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/gzdsz/djmbsz/mbzd/initList.do</result>
+			<result name="error">/xtsz/gzdsz/djmbsz/mbzd/initUpdate.do</result>
+		</action>
+	</package>
+	
+	<!-- 经费管理设置——经费类别 -->
+	<package name="xtsz_sjzd_jflb" extends="default" namespace="/xtsz/sjzd/jflb">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataFundsTypeAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/jflb/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataFundsTypeAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataFundsTypeAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/jflb/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataFundsTypeAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/jflb/initList.do</result>
+			<result name="error">/xtsz/sjzd/jflb/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataFundsTypeAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/jflb/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataFundsTypeAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/jflb/initList.do</result>
+			<result name="error">/xtsz/sjzd/jflb/initUpdate.do</result>
+		</action>
+
+		<action name="updateStatus" class="com.disease_control.web.action.xtsz.sjzd.DataFundsTypeAction" method="updateStatus">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/jflb/initList.do</result>
+		</action>
+	</package>
+	
+	<!-- 系统设置-数据字典-设备类别 -->
+	<package name="xtsz_sjzd_sblb" extends="default" namespace="/xtsz/sjzd/sblb">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceTypeAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sblb/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceTypeAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceTypeAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sblb/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceTypeAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/sblb/initList.do</result>
+			<result name="error">/xtsz/sjzd/sblb/initAdd.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceTypeAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sblb/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceTypeAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/sblb/initList.do</result>
+			<result name="error">/xtsz/sjzd/sblb/initUpdate.do</result>
+		</action>
+	</package>
+	
+	<!-- 系统设置-数据字典-设备 -->
+	<package name="xtsz_sjzd_sb" extends="default" namespace="/xtsz/sjzd/sb">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sb/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sb/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/sb/initList.do</result>
+			<result name="error">/xtsz/sjzd/sb/initAdd.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sb/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/sb/initList.do</result>
+			<result name="error">/xtsz/sjzd/sb/initUpdate.do</result>
+		</action>
+		
+		<action name="ajaxList" class="com.disease_control.web.action.xtsz.sjzd.DataDeviceAction" method="ajaxList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+	</package>
+	
+	<!-- 系统设置-数据字典-设备品牌 -->
+	<package name="xtsz_sjzd_sbpp" extends="default" namespace="/xtsz/sjzd/sbpp">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataBrandAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sbpp/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataBrandAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataBrandAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sbpp/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataBrandAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/sbpp/initList.do</result>
+			<result name="error">/xtsz/sjzd/sbpp/initAdd.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataBrandAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sbpp/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataBrandAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/sbpp/initList.do</result>
+			<result name="error">/xtsz/sjzd/sbpp/initUpdate.do</result>
+		</action>
+		
+		<action name="ajaxList" class="com.disease_control.web.action.xtsz.sjzd.DataBrandAction" method="ajaxList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+	</package>
+	
+	<!-- 系统设置-数据字典-设备型号 -->
+	<package name="xtsz_sjzd_ppxh" extends="default" namespace="/xtsz/sjzd/ppxh">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataBrandFormatAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/ppxh/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataBrandFormatAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataBrandFormatAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/ppxh/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataBrandFormatAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/ppxh/initList.do</result>
+			<result name="error">/xtsz/sjzd/ppxh/initAdd.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataBrandFormatAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/ppxh/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataBrandFormatAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/ppxh/initList.do</result>
+			<result name="error">/xtsz/sjzd/ppxh/initUpdate.do</result>
+		</action>
+		
+		<action name="ajaxList" class="com.disease_control.web.action.xtsz.sjzd.DataBrandFormatAction" method="ajaxList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+	</package>
+	
+	<package name="xtsz_sjzd_sydd" extends="default" namespace="/xtsz/sjzd/sydd">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataUsePlaceAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sydd/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataUsePlaceAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataUsePlaceAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/sydd/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataUsePlaceAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/sydd/initList.do</result>
+			<result name="error">/xtsz/sjzd/sydd/initAdd.do</result>
+		</action>
+		
+		<action name="ajaxList" class="com.disease_control.web.action.xtsz.sjzd.DataUsePlaceAction" method="ajaxList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+	</package>
+	
+	
+	
+	<package name="xtsz_sjzd_gyslb" extends="default" namespace="/xtsz/sjzd/gyslb">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierTypeAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gyslb/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierTypeAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierTypeAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gyslb/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierTypeAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/gyslb/initList.do</result>
+			<result name="error">/xtsz/sjzd/gyslb/initAdd.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierTypeAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gyslb/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierTypeAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/gyslb/initList.do</result>
+			<result name="error">/xtsz/sjzd/gyslb/initAdd.do</result>
+		</action>
+		
+		<action name="updateStatus" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierTypeAction" method="updateStatus">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		    <result name="success">/xtsz/sjzd/gyslb/initList.do</result>
+		</action>
+	</package>
+	
+	
+	<package name="xtsz_sjzd_gyszslb" extends="default" namespace="/xtsz/sjzd/gyszslb">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierCertificateTypeAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gyszslb/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierCertificateTypeAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierCertificateTypeAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gyszslb/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierCertificateTypeAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/gyszslb/initList.do</result>
+			<result name="error">/xtsz/sjzd/gyszslb/initAdd.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierCertificateTypeAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gyszslb/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataSupplierCertificateTypeAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/gyszslb/initList.do</result>
+			<result name="error">/xtsz/sjzd/gyszslb/initAdd.do</result>
+		</action>
+	</package>
+	
+	<package name="xtsz_sjzd_jfdmc" extends="default" namespace="/xtsz/sjzd/jfdmc">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataFundsNameAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/jfdmc/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataFundsNameAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataFundsNameAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/jfdmc/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataFundsNameAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/jfdmc/initList.do</result>
+			<result name="error">/xtsz/sjzd/jfdmc/initAdd.do</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataFundsNameAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result type="freemarker" name="success">/page/xtsz/sjzd/jfdmc/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataFundsNameAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			
+			<result name="success">/xtsz/sjzd/jfdmc/initList.do</result>
+			<result name="error">/xtsz/sjzd/jfdmc/initAdd.do</result>
+		</action>
+		
+		<action name="updateStatus" class="com.disease_control.web.action.xtsz.sjzd.DataFundsNameAction" method="updateStatus">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/xtsz/sjzd/jfdmc/initList.do</result>
+		</action>
+	</package>
+	
+	<!-- 系统设置-工作状态 -->
+	<package name="xtsz_sjzd_gzzt" extends="default" namespace="/xtsz/sjzd/gzzt">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataWorkStatusAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gzzt/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataWorkStatusAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataWorkStatusAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gzzt/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataWorkStatusAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/gzzt/initList.do</result>
+			<result name="error">/xtsz/sjzd/gzzt/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataWorkStatusAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/gzzt/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataWorkStatusAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/gzzt/initList.do</result>
+			<result name="error">/xtsz/sjzd/gzzt/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.sjzd.DataWorkStatusAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+	
+	
+		<!-- 系统设置-用车时间设置 -->
+	<package name="xtsz_sjzd_ycsj" extends="default" namespace="/xtsz/sjzd/ycsj">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataCarUseTimeAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/ycsj/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataCarUseTimeAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataCarUseTimeAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/ycsj/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataCarUseTimeAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/ycsj/initList.do</result>
+			<result name="error">/xtsz/sjzd/ycsj/initUpdate.do</result>
+		</action>
+	</package>
+	
+		<!-- 系统设置-会议室实用时间设置 -->
+	<package name="xtsz_sjzd_hyssj" extends="default" namespace="/xtsz/sjzd/hyssj">
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataMeetingRoomUseTimeAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/hyssj/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataMeetingRoomUseTimeAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataMeetingRoomUseTimeAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/hyssj/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataMeetingRoomUseTimeAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/hyssj/initList.do</result>
+			<result name="error">/xtsz/sjzd/hyssj/initUpdate.do</result>
+		</action>
+	</package>
+	
+		<!-- 系统设置-会议室设备设置-->
+	<package name="xtsz_sjzd_hyssb" extends="default" namespace="/xtsz/sjzd/hyssb">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DateMeetingRoomDeviceAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/hyssb/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DateMeetingRoomDeviceAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DateMeetingRoomDeviceAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/hyssb/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DateMeetingRoomDeviceAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/hyssb/initList.do</result>
+			<result name="error">/xtsz/sjzd/hyssb/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DateMeetingRoomDeviceAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/hyssb/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DateMeetingRoomDeviceAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/hyssb/initList.do</result>
+			<result name="error">/xtsz/sjzd/hyssb/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.sjzd.DateMeetingRoomDeviceAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/hyssb/initList.do</result>
+		</action>
+	</package>
+	
+	<!-- 系统设置-名族设置-->
+	<package name="xtsz_sjzd_mzsz" extends="default" namespace="/xtsz/sjzd/mzsz">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataMzInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/mzsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataMzInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataMzInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/mzsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataMzInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/mzsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/mzsz/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataMzInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/mzsz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataMzInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/mzsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/mzsz/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.sjzd.DataMzInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/mzsz/initList.do</result>
+		</action>
+	</package>
+	
+		<!-- 系统设置-职称设置-->
+	<package name="xtsz_sjzd_zcsz" extends="default" namespace="/xtsz/sjzd/zcsz">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataZcInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zcsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataZcInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataZcInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zcsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataZcInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zcsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/zcsz/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataZcInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zcsz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataZcInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zcsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/zcsz/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.sjzd.DataZcInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zcsz/initList.do</result>
+		</action>
+	</package>
+	
+			<!-- 系统设置-职称级别设置-->
+	<package name="xtsz_sjzd_zcjbsz" extends="default" namespace="/xtsz/sjzd/zcjbsz">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataZcjbInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zcjbsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataZcjbInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataZcjbInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zcjbsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataZcjbInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zcjbsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/zcjbsz/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataZcjbInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zcjbsz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataZcjbInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zcjbsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/zcjbsz/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.sjzd.DataZcjbInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zcjbsz/initList.do</result>
+		</action>
+	</package>
+	
+	<!-- 系统设置-政治面貌设置-->
+	<package name="xtsz_sjzd_zzmmsz" extends="default" namespace="/xtsz/sjzd/zzmmsz">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataZzmmInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zzmmsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataZzmmInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataZzmmInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zzmmsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataZzmmInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zzmmsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/zzmmsz/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataZzmmInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/zzmmsz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataZzmmInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zzmmsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/zzmmsz/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.sjzd.DataZzmmInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/zzmmsz/initList.do</result>
+		</action>
+	</package>
+	
+		<!-- 系统设置-文化程度设置-->
+	<package name="xtsz_sjzd_whcdsz" extends="default" namespace="/xtsz/sjzd/whcdsz">
+
+		<action name="initList" class="com.disease_control.web.action.xtsz.sjzd.DataWhcdInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/whcdsz/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.xtsz.sjzd.DataWhcdInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.xtsz.sjzd.DataWhcdInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/whcdsz/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.xtsz.sjzd.DataWhcdInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/whcdsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/whcdsz/initAdd.do</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.xtsz.sjzd.DataWhcdInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/xtsz/sjzd/whcdsz/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.xtsz.sjzd.DataWhcdInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/whcdsz/initList.do</result>
+			<result name="error">/xtsz/sjzd/whcdsz/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.xtsz.sjzd.DataWhcdInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/xtsz/sjzd/whcdsz/initList.do</result>
+		</action>
+	</package>
+</struts>
+

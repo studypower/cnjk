@@ -1,0 +1,1 @@
+update user_info u set u.pwd='e10adc3949ba59abbe56e057f20f883e' where u.grade!='1'

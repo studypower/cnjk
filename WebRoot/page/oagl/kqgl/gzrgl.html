@@ -1,0 +1,87 @@
+<#include "../../head.ftl" />
+<style>
+*{
+	font-size: 12px;
+}
+#leftTab{
+	margin: 0px;
+	padding: 0px;
+}
+#leftTab tr{
+	height: 25px;
+}
+#leftTab tr td{
+	text-align: center;
+}
+.topTr{
+	background-color: silver;
+	margin: 0px;
+	padding: 0px;
+}
+.topTr td{
+	background-color: silver;
+	margin: 0px;
+	padding: 0px;
+	
+}
+.bomTr:HOVER {
+	background-color: #0097ff;
+}
+</style>
+</head>
+<body>
+	<div id="pageloading"></div>
+	<div>
+	    <br/>
+		<center><span style="color:#3399ff;font-size:18px;font: bold;">工作日管理</span></center>
+		<div style="border: 1px solid #2e6e9e;margin: 5px;margin-bottom: 0px;padding: 3px;" >&nbsp;
+			<button class="xbtn" >多选模式</button>&nbsp;
+			<button class="xbtn" >设为节假日</button>&nbsp;
+			<button class="xbtn" >设为工作日</button>&nbsp;
+			<button class="xbtn" >设为三薪日</button>
+		</div>
+		<div>
+		  <div style="border: 1px solid #2e6e9e;margin: 5px;margin-bottom: 2px;padding: 0px;float: left;width: 180px;">
+			<table id="leftTab" cellpadding="0" cellspacing="0" style="width:100%">
+				<tr class="topTr">
+					<td style="width: 60px">年份</td>
+					<td style="border-left: 1px solid #2e6e9e;">操作栏</td>
+				</tr>
+				<tr class="bomTr">
+					<td style="border-top: 1px solid #2e6e9e;">2014</td>
+					<td style="border-left: 1px solid #2e6e9e;border-top: 1px solid #2e6e9e;"><a href="###">新增</a>&nbsp;&nbsp;<a href="###">修改</a>&nbsp;&nbsp;<a href="###">删除</a></td>
+				</tr>
+				<tr class="bomTr">
+					<td style="border-top: 1px solid #2e6e9e;">2015</td>
+					<td style="border-left: 1px solid #2e6e9e;border-top: 1px solid #2e6e9e;"><a href="###">新增</a>&nbsp;&nbsp;<a href="###">修改</a>&nbsp;&nbsp;<a href="###">删除</a></td>
+				</tr>
+				<tr class="bomTr">
+					<td style="border-top: 1px solid #2e6e9e;">2016</td>
+					<td style="border-left: 1px solid #2e6e9e;border-top: 1px solid #2e6e9e;"><a href="###">新增</a>&nbsp;&nbsp;<a href="###">修改</a>&nbsp;&nbsp;<a href="###">删除</a></td>
+				</tr>
+				<tr class="bomTr">
+					<td style="border-top: 1px solid #2e6e9e;">2017</td>
+					<td style="border-left: 1px solid #2e6e9e;border-top: 1px solid #2e6e9e;"><a href="###">新增</a>&nbsp;&nbsp;<a href="###">修改</a>&nbsp;&nbsp;<a href="###">删除</a></td>
+				</tr>
+				<tr class="bomTr">
+					<td style="border-top: 1px solid #2e6e9e;">2018</td>
+					<td style="border-left: 1px solid #2e6e9e;border-top: 1px solid #2e6e9e;"><a href="###">新增</a>&nbsp;&nbsp;<a href="###">修改</a>&nbsp;&nbsp;<a href="###">删除</a></td>
+				</tr>
+			</table>
+		  </div>
+		  <div>
+		  	<div>
+		  		
+		  	</div>
+		  </div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		
+		$(".xbtn").button();
+		$("#pageloading").hide();
+	});
+</script>
+<#include "../../foot.ftl" />

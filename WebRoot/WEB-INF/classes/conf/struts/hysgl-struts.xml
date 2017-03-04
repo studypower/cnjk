@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!--会议室信息维护-->
+	<package name="hysgl_xxwh" extends="default" namespace="/hysgl/xxwh">
+		<action name="initList" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/xxwh/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/xxwh/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/hysgl/xxwh/initList.do</result>
+			<result name="error">/hysgl/xxwh/initAdd.do</result>
+		</action>
+		
+	   <action name="initApproval" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="initApproval">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/xxwh/approval.ftl</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/xxwh/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/xxwh/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/hysgl/xxwh/initList.do</result>
+			<result name="error">/hysgl/xxwh/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.hysgl.MeetingRoomInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/hysgl/xxwh/initList.do</result>
+		</action>
+	</package>
+	
+	
+	<!--会议室申请-->
+	<package name="hysgl_sq" extends="default" namespace="/hysgl/sq">
+		<action name="initList" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/sq/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="cancel" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="cancel">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="initIdleMeetRoomList" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="initIdleMeetRoomList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/sq/idleMeetRoomList.ftl</result>
+		</action>
+
+		<action name="idleMeetRoomList" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="idleMeetRoomList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+	   <action name="initApply" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="initApply">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/sq/apply.ftl</result>
+		</action>
+
+		<action name="apply" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="apply">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/hysgl/sq/initList.do</result>
+			<result name="error">/hysgl/sq/initApply.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/sq/info.ftl</result>
+		</action>
+		
+	   <action name="del" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result  name="success">/hysgl/sq/initList.do</result>
+		</action>
+
+		<action name="audit" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="audit">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="initCalendar" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="initCalendar">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/hysgl/sq/calendar.ftl</result>
+		</action>
+		
+		<action name="calendar" class="com.disease_control.web.action.hysgl.MeetingRoomApplyAction" method="calendar">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+	
+</struts>
+

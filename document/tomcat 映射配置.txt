@@ -1,0 +1,2 @@
+<Context path="/file/imgUpload"  docBase="D:\\uploadFile\\images" debug="0" privileged="true"/>
+	 	   <Context path="/file/fileUpload" docBase="D:\\uploadFile\\file"   debug="0" privileged="true"/>

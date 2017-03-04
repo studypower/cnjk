@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+.nav {width: 100%; padding: 40px 28px 25px 0; font-family: "微软雅黑";background: url(../images/main_bg.jpg) repeat-x center top #fff} 
+ul.nav {padding: 0; margin: 0; font-size: 14px; line-height: 0.5em; list-style: none; text-align:left;} 
+ul.nav li {border-bottom:1px dashed #cccccc;}
+ul.nav>li> a{text-align: left;margin-left:15px;}
+ul.nav li a {line-height: 10px; font-size: 14px; padding: 10px 5px ; color: #336699; display: block; text-decoration: none; font-weight: bolder;}
+ul.nav li a:hover {background-color:#00b7e1;    color:white;}
+ul.nav ul { margin: 0; padding: 0;display: none;text-align:left;} 
+ul.nav ul li { margin: 0; padding: 0; clear: both; text-align: left; border-bottom: none;text-align:left;} 
+ul.nav ul li a { padding-left: 15px; font-size: 12px; font-weight: normal;margin-left:15px;}
+ul.nav ul li a:hover {background-color:#D3C99C; color:#000;} 
+ul.nav ul ul li a {color:silver; padding-left: 25px; color:#000;} 
+ul.nav ul ul li a:hover { background-color:#D3CEB8; color:#000;} 
+ul.nav span{float:right;}
+
+.second_menu_selected{background-color:#00b7e1;    color:white;}
+.third_menu_selected{background-color:#D3CEB8; color:#000;}

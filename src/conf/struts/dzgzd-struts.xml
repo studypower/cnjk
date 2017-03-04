@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<package name="dzgzd_gzdgl_gzdmbxz" extends="default" namespace="/dzgzd/gzdgl/gzdmbxz">
+		<action name="initList" class="com.disease_control.web.action.dzgzd.gzdgl.gzdmbxz.PayrollTableInfoAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdmbxz/list.ftl</result>
+		</action>
+		
+		<action name="list" class="com.disease_control.web.action.dzgzd.gzdgl.gzdmbxz.PayrollTableInfoAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="export" class="com.disease_control.web.action.dzgzd.gzdgl.gzdmbxz.PayrollTableInfoAction" method="export">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+	</package>
+	
+	<package name="dzgzd_gzdgl_gzdpc" extends="default" namespace="/dzgzd/gzdgl/gzdpc">
+		<action name="initList" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollBatchAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdpc/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollBatchAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="initAdd" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollBatchAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdpc/add.ftl</result>
+		</action>
+		
+		<action name="add" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollBatchAction" method="add">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/dzgzd/gzdgl/gzdpc/initList.do</result>
+			<result name="error">/dzgzd/gzdgl/gzdpc/initAdd.do</result>
+		</action>
+		
+		<action name="info" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollBatchAction" method="info">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdpc/info.ftl</result>
+		</action>
+		
+		<action name="release" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollBatchAction" method="release">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollBatchAction" method="del">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/dzgzd/gzdgl/gzdpc/initList.do</result>
+			<result name="error">/dzgzd/gzdgl/gzdpc/initList.do</result>
+		</action>
+		
+	</package>
+	
+	<package name="dzgzd_gzdgl_gzdpc_gzdxx" extends="default" namespace="/dzgzd/gzdgl/gzdpc/gzdxx">
+		<action name="initList" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdpc/gzdxx/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="initAdd" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="initAdd">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdpc/gzdxx/add.ftl</result>
+		</action>
+		
+		<action name="add" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="add">
+			<interceptor-ref name="loginLimits" />
+		    <interceptor-ref name="fileUpload"/>
+            <interceptor-ref name="yakovStack" />
+			<result name="success">/dzgzd/gzdgl/gzdpc/gzdxx/initList.do</result>
+			<result name="error">/dzgzd/gzdgl/gzdpc/gzdxx/initAdd.do</result>
+		</action>
+		
+		<action name="info" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="info">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdpc/gzdxx/info.ftl</result>
+		</action>
+		
+		<action name="initUpdate" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="initUpdate">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdgl/gzdpc/gzdxx/update.ftl</result>
+		</action>
+		
+		<action name="update" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="update">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/dzgzd/gzdgl/gzdpc/gzdxx/initList.do</result>
+			<result name="error">/dzgzd/gzdgl/gzdpc/gzdxx/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.dzgzd.gzdgl.gzdpc.PayrollEntryAction" method="del">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result name="success">/dzgzd/gzdgl/gzdpc/gzdxx/initList.do</result>
+			<result name="error">/dzgzd/gzdgl/gzdpc/gzdxx/initList.do</result>
+		</action>
+	</package>
+	
+	<package name="dzgzd_wdgzd" extends="default" namespace="/dzgzd/wdgzd">
+		<action name="initList" class="com.disease_control.web.action.dzgzd.wdgzd.PayrollEntryAction" method="initList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/wdgzd/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.dzgzd.wdgzd.PayrollEntryAction" method="list">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="initListByTable" class="com.disease_control.web.action.dzgzd.wdgzd.PayrollEntryAction" method="initListByTable">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/wdgzd/listByTable.ftl</result>
+		</action>
+
+		<action name="listByTable" class="com.disease_control.web.action.dzgzd.wdgzd.PayrollEntryAction" method="listByTable">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="read" class="com.disease_control.web.action.dzgzd.wdgzd.PayrollEntryAction" method="read">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/wdgzd/info.ftl</result>
+		</action>
+	</package>
+	
+	<package name="dzgzd_gzdtj" extends="default" namespace="/dzgzd/gzdtj">
+		<action name="initWageSum" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="initWageSum">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdtj/wageSum.ftl</result>
+		</action>
+		
+		<action name="wageSum" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="wageSum">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdtj/wageSum.ftl</result>
+		</action>
+		
+		<action name="initWageSumList" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="initWageSumList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdtj/wageSumList.ftl</result>
+		</action>
+		
+		<action name="wageSumList" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="wageSumList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="exportWageSumList" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="exportWageSumList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="initColumnSumList" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="initColumnSumList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+			<result type="freemarker" name="success">/page/dzgzd/gzdtj/columnSumList.ftl</result>
+		</action>
+		
+		<action name="columnSumList" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="columnSumList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="exportColumnSumList" class="com.disease_control.web.action.dzgzd.gzdtj.PayrollEntryAction" method="exportColumnSumList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+	</package>
+</struts>
+

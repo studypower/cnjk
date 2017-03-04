@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!-- OA 管理-通知公告 -->
+	<package name="oagl_tzgg" extends="default" namespace="/oagl/tzgg">
+		<action name="initList" class="com.disease_control.web.action.oagl.TzggAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/tzgg/list.ftl</result>
+		</action>
+		<action name="list" class="com.disease_control.web.action.oagl.TzggAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="edit" class="com.disease_control.web.action.oagl.TzggAction" method="edit">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/tzgg/edit.ftl</result>
+		</action>
+		<action name="add" class="com.disease_control.web.action.oagl.TzggAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/tzgg/add.ftl</result>
+		</action>
+		<action name="save" class="com.disease_control.web.action.oagl.TzggAction" method="save">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="del" class="com.disease_control.web.action.oagl.TzggAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="top" class="com.disease_control.web.action.oagl.TzggAction" method="top">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="view" class="com.disease_control.web.action.oagl.TzggAction" method="view">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/tzgg/view.ftl</result>
+		</action>
+		<action name="findTops" class="com.disease_control.web.action.oagl.TzggAction" method="findTops">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="saveTops" class="com.disease_control.web.action.oagl.TzggAction" method="saveTops">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+
+	<package name="oagl_glgn" extends="default" namespace="/oagl/glgn">
+		<action name="gzrgl" class="com.disease_control.web.action.oagl.GlgnAction" method="gzrgl">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/kqgl/gzrgl.ftl</result>
+		</action>
+		<action name="daySettings" class="com.disease_control.web.action.oagl.GlgnAction" method="daySettings">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="findByYear" class="com.disease_control.web.action.oagl.GlgnAction" method="findByYear">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="ztwh" class="com.disease_control.web.action.oagl.GlgnAction" method="ztwh">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/kqgl/ztwh.ftl</result>
+		</action>
+		<action name="getEAndLastDay" class="com.disease_control.web.action.oagl.GlgnAction" method="getEAndLastDay">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="saveZt" class="com.disease_control.web.action.oagl.GlgnAction" method="saveZt">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="findZt" class="com.disease_control.web.action.oagl.GlgnAction" method="findZt">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="getZt" class="com.disease_control.web.action.oagl.GlgnAction" method="getZt">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbmdwh" class="com.disease_control.web.action.oagl.GlgnAction" method="zbmdwh">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/kqgl/zbmdwh.ftl</result>
+		</action>
+		<action name="zhmdUpload" class="com.disease_control.web.action.oagl.GlgnAction" method="zhmdUpload">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/kqgl/zbmdwh.ftl</result>
+		</action>
+		<action name="zbrlwh" class="com.disease_control.web.action.oagl.GlgnAction" method="zbrlwh">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/kqgl/zbrlwh.ftl</result>
+		</action>
+		<action name="findZbrl" class="com.disease_control.web.action.oagl.GlgnAction" method="findZbrl">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="jisuanRiqi" class="com.disease_control.web.action.oagl.GlgnAction" method="jisuanRiqi">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="getZbrl" class="com.disease_control.web.action.oagl.GlgnAction" method="getZbrl">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="saveZb" class="com.disease_control.web.action.oagl.GlgnAction" method="saveZb">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbTeamBiz" class="com.disease_control.web.action.oagl.GlgnAction" method="zbTeamBiz">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/zbteam/zbTeamBizList.ftl</result>
+		</action>
+
+		<action name="zbTeamSave" class="com.disease_control.web.action.oagl.GlgnAction" method="zbTeamSave">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbTeamDelete" class="com.disease_control.web.action.oagl.GlgnAction" method="zbTeamDelete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbTeamBizRule" class="com.disease_control.web.action.oagl.GlgnAction" method="zbTeamBizRule">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/zbteam/zbTeamBizRuleList.ftl</result>
+		</action>
+		<action name="zbTeamBizRuleList" class="com.disease_control.web.action.oagl.GlgnAction" method="zbTeamBizRuleList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbTeamRuleEnableAndDelete" class="com.disease_control.web.action.oagl.GlgnAction" method="zbTeamRuleEnableAndDelete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbTeamBizRuleSave" class="com.disease_control.web.action.oagl.GlgnAction" method="zbTeamBizRuleSave">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="batchUpdZbonDutyOrder" class="com.disease_control.web.action.oagl.GlgnAction" method="batchUpdZbonDutyOrder">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbRiliPreview" class="com.disease_control.web.action.oagl.GlgnAction" method="zbRiliPreview">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/zbteam/zbpreview.ftl</result>
+		</action>
+		<action name="zbRiliPreviewData" class="com.disease_control.web.action.oagl.GlgnAction" method="zbRiliPreviewData">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zbRiliPreviewUpd" class="com.disease_control.web.action.oagl.GlgnAction" method="zbRiliPreviewUpd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+
+	<!-- OA管理 综合查询 -->
+	<package name="oagl_zhcx" extends="default" namespace="/oagl/zhcx">
+		<action name="initList" class="com.disease_control.web.action.oagl.ZhcxAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/zhcx/zhcx.ftl</result>
+		</action>
+		<action name="list" class="com.disease_control.web.action.oagl.ZhcxAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="initZbList" class="com.disease_control.web.action.oagl.ZhcxAction" method="initZbList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/zhcx/zbzhcx.ftl</result>
+		</action>
+		<action name="zbList" class="com.disease_control.web.action.oagl.ZhcxAction" method="zbList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="initTxdtjList" class="com.disease_control.web.action.oagl.ZhcxAction" method="initTxdtjList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/zhcx/txdtj.ftl</result>
+		</action>
+		<action name="initZbftj" class="com.disease_control.web.action.oagl.ZhcxAction" method="initZbftj">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/zhcx/zbftj.ftl</result>
+		</action>
+		<action name="zbftj" class="com.disease_control.web.action.oagl.ZhcxAction" method="zbftj">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="myStatusZbfInfo" class="com.disease_control.web.action.oagl.ZhcxAction" method="myStatusZbfInfo">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+
+	<!-- OA管理 考勤首页 -->
+	<package name="oagl_kqsy" extends="default" namespace="/oagl/kqsy">
+		<action name="kqsy" class="com.disease_control.web.action.oagl.KqsyAction" method="kqsy">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/kqsy/kqsy.ftl</result>
+		</action>
+		<action name="kqList" class="com.disease_control.web.action.oagl.KqsyAction" method="kqList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="kqsyZtcx" class="com.disease_control.web.action.oagl.KqsyAction" method="kqsyZtcx">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="kqsysy" class="com.disease_control.web.action.oagl.KqsyAction" method="kqsysy">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="kqsyInfo" class="com.disease_control.web.action.oagl.KqsyAction" method="kqsyInfo">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="kqsyContent" class="com.disease_control.web.action.oagl.KqsyAction" method="kqsyContent">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+
+	<!-- 首页 -->
+	<package name="oagl_index" extends="default" namespace="/oagl/index">
+		<action name="index" class="com.disease_control.web.action.oagl.IndexAction" method="index">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/index/index.ftl</result>
+		</action>
+		<action name="initTzggList" class="com.disease_control.web.action.oagl.IndexAction" method="initTzggList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/index/tzggList.ftl</result>
+		</action>
+		<action name="tzggList" class="com.disease_control.web.action.oagl.IndexAction" method="tzggList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="zhiban" class="com.disease_control.web.action.oagl.IndexAction" method="zhiban">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="emailNewcount" class="com.disease_control.web.action.oagl.IndexAction" method="emailNewcount">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="emailLoginUrl" class="com.disease_control.web.action.oagl.IndexAction" method="emailLoginUrl">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+	<package name="oagl_upload" extends="default" namespace="/oagl/upload">
+		<action name="imgUpload" class="com.disease_control.web.action.upload.XhediterUpload" method="imgUpload">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="fileUpload" class="com.disease_control.web.action.upload.XhediterUpload" method="fileUpload">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+
+	<!-- 工作时间段设置 -->
+	<package name="oagl_gzsjdsz" extends="default" namespace="/oagl/gzsjdsz">
+		<action name="initList" class="com.disease_control.web.action.oagl.GzsjdszAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/gzsjdsz/list.ftl</result>
+		</action>
+		<action name="list" class="com.disease_control.web.action.oagl.GzsjdszAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="setIsUse" class="com.disease_control.web.action.oagl.GzsjdszAction" method="setIsUse">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="initEdit" class="com.disease_control.web.action.oagl.GzsjdszAction" method="initEdit">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="edit" class="com.disease_control.web.action.oagl.GzsjdszAction" method="edit">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="valModelName" class="com.disease_control.web.action.oagl.GzsjdszAction" method="valModelName">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="addNew" class="com.disease_control.web.action.oagl.GzsjdszAction" method="addNew">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="setDelete" class="com.disease_control.web.action.oagl.GzsjdszAction" method="setDelete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+	<!-- 基数服务 -->
+	<package name="oagl_baseMoney" extends="default" namespace="/oagl/baseMoney">
+		<action name="toList" class="com.disease_control.web.action.oagl.BaseMoneyAction" method="toList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/oagl/baseMoney/list.ftl</result>
+		</action>
+		<action name="list" class="com.disease_control.web.action.oagl.BaseMoneyAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="delete" class="com.disease_control.web.action.oagl.BaseMoneyAction" method="delete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="saveOrUpdate" class="com.disease_control.web.action.oagl.BaseMoneyAction" method="saveOrUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		<action name="get" class="com.disease_control.web.action.oagl.BaseMoneyAction" method="get">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+</struts>

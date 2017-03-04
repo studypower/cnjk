@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd "
+	default-autowire="byName">
+
+	<!-- 人员管理 -->
+	<bean id="staffInfoService" class="com.disease_control.service.StaffInfoService" scope="singleton"></bean>
+	<!-- <bean id="staffMoveService" class="com.disease_control.service.StaffMoveService" scope="singleton"></bean> <bean id="staffDimissionService" class="com.disease_control.service.StaffDimissionService" 
+		scope="singleton"></bean> -->
+	<bean id="chargeRangeService" class="com.disease_control.service.ChargeRangeService" scope="singleton"></bean>
+
+	<!-- 系统设置 -->
+	<bean id="roleInfoService" class="com.disease_control.service.RoleInfoService" scope="singleton"></bean>
+	<bean id="menuInfoService" class="com.disease_control.service.MenuInfoService" scope="singleton"></bean>
+	<bean id="userInfoService" class="com.disease_control.service.UserInfoService" scope="singleton"></bean>
+	<bean id="departmentInfoService" class="com.disease_control.service.DepartmentInfoService" scope="singleton"></bean>
+	<bean id="positionInfoService" class="com.disease_control.service.PositionInfoService" scope="singleton"></bean>
+	<bean id="departmentPositionService" class="com.disease_control.service.DepartmentPositionService" scope="singleton"></bean>
+	<bean id="roleMenuService" class="com.disease_control.service.RoleMenuService" scope="singleton"></bean>
+	<bean id="userMenuService" class="com.disease_control.service.UserMenuService" scope="singleton"></bean>
+	<!-- <bean id="fundsTypeService" class="com.disease_control.service.FundsTypeService" scope="singleton"></bean> -->
+
+
+
+	<bean id="dataBrandFormatService" class="com.disease_control.service.DataBrandFormatService" scope="singleton"></bean>
+	<bean id="dataBrandService" class="com.disease_control.service.DataBrandService" scope="singleton"></bean>
+	<bean id="dataDeviceService" class="com.disease_control.service.DataDeviceService" scope="singleton"></bean>
+	<bean id="dataDeviceTypeService" class="com.disease_control.service.DataDeviceTypeService" scope="singleton"></bean>
+	<bean id="dataUsePlaceService" class="com.disease_control.service.DataUsePlaceService" scope="singleton"></bean>
+	<bean id="dataFundsTypeService" class="com.disease_control.service.DataFundsTypeService" scope="singleton"></bean>
+	<bean id="dataFundsNameService" class="com.disease_control.service.DataFundsNameService" scope="singleton"></bean>
+	<bean id="dataSystemService" class="com.disease_control.service.DataSystemService" scope="singleton"></bean>
+	<bean id="dataCarUseTimeService" class="com.disease_control.service.DataCarUseTimeService" scope="singleton"></bean>
+	<bean id="dataSupplierCertificateTypeService" class="com.disease_control.service.DataSupplierCertificateTypeService" scope="singleton"></bean>
+	<bean id="dataSupplierTypeService" class="com.disease_control.service.DataSupplierTypeService" scope="singleton"></bean>
+	<bean id="dataMeetingRoomUseTimeService" class="com.disease_control.service.DataMeetingRoomUseTimeService" scope="singleton"></bean>
+	<bean id="dataWorkStatusService" class="com.disease_control.service.DataWorkStatusService" scope="singleton"></bean>
+	<bean id="dataMzInfoService" class="com.disease_control.service.DataMzInfoService" scope="singleton"></bean>
+	<bean id="dataZcInfoService" class="com.disease_control.service.DataZcInfoService" scope="singleton"></bean>
+	<bean id="dataZcjbInfoService" class="com.disease_control.service.DataZcjbInfoService" scope="singleton"></bean>
+	<bean id="dataZzmmInfoService" class="com.disease_control.service.DataZzmmInfoService" scope="singleton"></bean>
+	<bean id="dataWhcdInfoService" class="com.disease_control.service.DataWhcdInfoService" scope="singleton"></bean>
+	<!-- 工资单字段信息 -->
+	<bean id="payrollColumnInfoService" class="com.disease_control.service.PayrollColumnInfoService" scope="singleton"></bean>
+	<!-- 工资单模板信息 -->
+	<bean id="payrollTableInfoService" class="com.disease_control.service.PayrollTableInfoService" scope="singleton"></bean>
+
+	<bean id="payrollEntryService" class="com.disease_control.service.PayrollEntryService" scope="singleton"></bean>
+
+	<bean id="payrollBatchService" class="com.disease_control.service.PayrollBatchService" scope="singleton"></bean>
+	<!-- 经费管理 -->
+	<bean id="fundsApplyInfoService" class="com.disease_control.service.FundsApplyInfoService" scope="singleton"></bean>
+	<bean id="fundsApplyInfoLogService" class="com.disease_control.service.FundsApplyInfoLogService" scope="singleton"></bean>
+	<!-- <bean id="fundsNameService" class="com.disease_control.service.FundsNameService" scope="singleton"></bean> -->
+	<!--会议室管理 -->
+	<bean id="meetingRoomApplyService" class="com.disease_control.service.MeetingRoomApplyService" scope="singleton"></bean>
+	<bean id="meetingRoomInfoService" class="com.disease_control.service.MeetingRoomInfoService" scope="singleton"></bean>
+	<bean id="meetingRoomDeviceService" class="com.disease_control.service.MeetingRoomDeviceService" scope="singleton"></bean>
+	<!-- 车辆管理 -->
+	<bean id="carInfoService" class="com.disease_control.service.CarInfoService" scope="singleton"></bean>
+	<bean id="carUseApplyService" class="com.disease_control.service.CarUseApplyService" scope="singleton"></bean>
+
+	<bean id="supplierInfoService" class="com.disease_control.service.SupplierInfoService" scope="singleton"></bean>
+	<!-- <bean id="supplierTypeService" class="com.disease_control.service.SupplierTypeService" scope="singleton"></bean> -->
+	<bean id="supplierInspectionLogService" class="com.disease_control.service.SupplierInspectionLogService" scope="singleton"></bean>
+	<bean id="supplierCertificateService" class="com.disease_control.service.SupplierCertificateService" scope="singleton"></bean>
+
+	<!-- 物品采购 -->
+	<bean id="purchaseOrderService" class="com.disease_control.service.PurchaseOrderService" scope="singleton"></bean>
+
+	<bean id="assetsInfoService" class="com.disease_control.service.AssetsInfoService" scope="singleton"></bean>
+
+	<!-- 考勤 -->
+	<bean id="workInfoService" class="com.disease_control.service.WorkInfoService" scope="singleton"></bean>
+	<bean id="workDatePlanService" class="com.disease_control.service.WorkDatePlanService" scope="singleton"></bean>
+	<bean id="workLogService" class="com.disease_control.service.WorkLogService" scope="singleton"></bean>
+	<bean id="workMothCountService" class="com.disease_control.service.WorkMothCountService" scope="singleton"></bean>
+
+	<bean id="msgInfoService" class="com.disease_control.service.MsgInfoService" scope="singleton"></bean>
+	<!-- OA管理 -->
+	<bean id="tzggService" class="com.disease_control.service.TzggService" scope="singleton"></bean>
+	<bean id="glgnService" class="com.disease_control.service.GlgnService" scope="singleton"></bean>
+	<bean id="oaSysDictService" class="com.disease_control.service.OASysDictService" scope="singleton"></bean>
+	<bean id="zhcxService" class="com.disease_control.service.ZhcxService" scope="singleton"></bean>
+	<bean id="kqsyService" class="com.disease_control.service.KqsyService" scope="singleton"></bean>
+	<bean id="oaglIndexService" class="com.disease_control.service.OaglIndexService" scope="singleton"></bean>
+
+	<!-- 考勤时间段维护 -->
+	<bean id="gzsjdszService" class="com.disease_control.service.GzsjdszService" scope="singleton"></bean>
+
+	<!-- UserInfoService -->
+	<bean id="userService" class="com.disease_control.service.system.impl.UserInfoServiceImpl" />
+
+	<!-- 基数维护 -->
+	<bean id="baseMoneyService" class="com.disease_control.service.BaseMoneyService" scope="singleton"></bean>
+	
+</beans>

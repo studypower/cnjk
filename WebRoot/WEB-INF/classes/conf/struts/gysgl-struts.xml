@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!-- 供应商管理-->
+	<package name="gysgl_gysxx" extends="default" namespace="/gysgl/gysxx">
+		<action name="initList" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gysgl/gysxx/initList.do</result>
+			<result name="error">/gysgl/gysxx/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gysgl/gysxx/initList.do</result>
+			<result name="error">/gysgl/gysxx/initUpdate.do</result>
+		</action>
+		
+		<action name="delete" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="delete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gysgl/gysxx/initList.do</result>
+		</action>
+		
+		<action name="exportData" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="exportData">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+	</package>
+	
+	<package name="gysgl_gysxx_zsxx" extends="default" namespace="/gysgl/gysxx/zsxx">
+		<action name="initList" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/zsxx/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/zsxx/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gysgl/gysxx/zsxx/initList.do</result>
+			<result name="error">/gysgl/gysxx/zsxx/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/zsxx/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysxx/zsxx/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gysgl/gysxx/zsxx/initList.do</result>
+			<result name="error">/gysgl/gysxx/zsxx/initUpdate.do</result>
+		</action>
+		
+		<action name="delete" class="com.disease_control.web.action.gysgl.SupplierCertificateAction" method="delete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gysgl/gysxx/zsxx/initList.do</result>
+		</action>
+	</package>
+	
+	<package name="gysgl_gysnj" extends="default" namespace="/gysgl/gysnj">
+		<action name="initList" class="com.disease_control.web.action.gysgl.SupplierInspectionLogAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysnj/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.gysgl.SupplierInspectionLogAction" method="list">
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.gysgl.SupplierInspectionLogAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysnj/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.gysgl.SupplierInspectionLogAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gysgl/gysnj/initList.do</result>
+			<result name="error">/gysgl/gysnj/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.gysgl.SupplierInspectionLogAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gysnj/info.ftl</result>
+		</action>
+	</package>
+	
+	
+	
+	<!-- 供应商管理-->
+	<package name="gysgl_gyscgcx" extends="default" namespace="/gysgl/gyscgcx">
+		<action name="initListByOrder" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="initListByOrder">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gysgl/gyscgcx/list.ftl</result>
+		</action>
+
+		<action name="listByOrder" class="com.disease_control.web.action.gysgl.SupplierInfoAction" method="listByOrder">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+</struts>
+

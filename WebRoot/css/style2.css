@@ -1,0 +1,219 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	min-width: 900px;
+}
+
+.header {
+	background-color: #1e2333;
+	color: white;
+	border-bottom: 2px solid #578DB4;
+}
+
+.header-line1 {
+	/* Safari 5.1 - 6.0 */
+	background: -webkit-linear-gradient(left, #DC733C, #87D231);
+	/* Opera 11.1 - 12.0 */
+	background: -o-linear-gradient(right, #DC733C, #87D231);
+	/* Firefox 3.6 - 15 */
+	background: -moz-linear-gradient(right, #DC733C, #87D231);
+	/* 标准的语法（必须放在最后） */
+	background: linear-gradient(to right, #DC733C, #87D231);
+	height: 4px;
+}
+
+.header-line2 {
+	/* Safari 5.1 - 6.0 */
+	background: -webkit-linear-gradient(left, #87D231, #5FD5D1);
+	/* Opera 11.1 - 12.0 */
+	background: -o-linear-gradient(right, #87D231, #5FD5D1);
+	/* Firefox 3.6 - 15 */
+	background: -moz-linear-gradient(right, #87D231, #5FD5D1);
+	/* 标准的语法（必须放在最后） */
+	background: linear-gradient(to right, #87D231, #5FD5D1);
+	height: 4px;
+}
+.logo{
+	padding: 20px 0 0 60px;
+}
+/*.title {
+	padding: 20px 0 0 60px;
+	font-size: 28px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	letter-spacing: 13px;
+	color: #DEF6FF;
+}
+
+.after {
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	font-style: oblique;
+	margin: -8px 0 -8px 0;
+	padding: 0 60px 0 0;
+	opacity: 0.1;
+}*/
+
+.indexbtn {
+	float: left;
+	margin-right: 50px;
+	color: #A1ADAD;
+	cursor: pointer;
+}
+
+.indexbtn:hover{
+	color: #DBE5E5;
+}
+
+.indexbtn>span {
+	font-size: 32px;
+	display: inline-block;
+	padding: 7px;
+	border: 1px solid #A1ADAD;
+	/* Firefox */
+	-moz-border-radius: 15px;
+	/* Safari 和 Chrome */
+	-webkit-border-radius: 15px;
+	border-radius: 3px;
+	margin: 7px;
+}
+
+.indexbtn>div {
+	font-size: 13px;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+
+.btn-active>span {
+	background-color: #5AC7C2;
+	border: 1px solid #5AC7C2;
+	color: #EEEEEE;
+}
+
+.btn-active>div {
+	color: #EEEEEE;
+}
+/*======================================蓝色版样式==============================================*/
+.indexbtn2 {
+	float: left;
+	margin-right: 50px;
+	color: #E5E5E5;
+	cursor: pointer;
+}
+
+.indexbtn2:hover{
+	color: #FFFFFF;
+}
+
+.indexbtn2>span {
+	font-size: 32px;
+	display: inline-block;
+	padding: 7px;
+	border: 1px solid #E5E5E5;
+	/* Firefox */
+	-moz-border-radius: 15px;
+	/* Safari 和 Chrome */
+	-webkit-border-radius: 15px;
+	border-radius: 3px;
+	margin: 7px;
+}
+
+.indexbtn2>div {
+	font-size: 13px;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+
+.btn-active2>span {
+	background-color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	color: #0568E0;
+}
+
+.btn-active2>div {
+	color: #FFFFFF;
+}
+/*======================================蓝色版样式==============================================*/
+.total-statistics {
+	margin: 15px 0;
+	padding: 5px!important;
+}
+
+.total-statistics>div {
+	height: 150px;
+	/* Firefox */
+	-moz-border-radius: 15px;
+	/* Safari 和 Chrome */
+	-webkit-border-radius: 15px;
+	border-radius: 3px;
+}
+
+.total-number {
+	font-family: "微软雅黑";
+	text-align: center;
+	padding-top: 30px;
+	color: white;
+}
+
+.total-number>span {
+	font-size: 16px;
+}
+
+.charts {
+	margin-bottom: 5px;
+	padding: 5px!important;
+}
+
+.charts>div {
+	height: 290px;
+	border: 1px solid #aaaaaa;
+	/* Firefox */
+	-moz-border-radius: 15px;
+	/* Safari 和 Chrome */
+	-webkit-border-radius: 15px;
+	border-radius: 3px;
+}
+
+.shadow1{
+	 -moz-box-shadow: 2px 2px 3px #9E7B68;
+    -webkit-box-shadow: 2px 2px 3px #9E7B68;
+    box-shadow: 2px 2px 3px #9E7B68;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#9E7B68')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#9E7B68');
+}
+.shadow2{
+	-moz-box-shadow: 2px 2px 3px #8FA866;
+    -webkit-box-shadow: 2px 2px 3px #8FA866;
+    box-shadow: 2px 2px 3px #8FA866;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#8FA866')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#8FA866');
+}
+.shadow3{
+	-moz-box-shadow: 2px 2px 3px #79AAA7;
+    -webkit-box-shadow: 2px 2px 3px #79AAA7;
+    box-shadow: 2px 2px 3px #79AAA7;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#79AAA7')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#79AAA7');
+}
+.shadow4{
+	-moz-box-shadow: 1px 1px 2px #898989;
+    -webkit-box-shadow: 1px 1px 2px #898989;
+    box-shadow: 1px 1px 2px #898989;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#898989')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#898989');
+}

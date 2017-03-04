@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!-- 经费管理-->
+	<package name="clgl_clxx" extends="default" namespace="/clgl/clxx">
+		<action name="initList" class="com.disease_control.web.action.clgl.CarInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/clxx/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.clgl.CarInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.clgl.CarInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/clxx/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.clgl.CarInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/clgl/clxx/initList.do</result>
+			<result name="error">/clgl/clxx/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.clgl.CarInfoAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/clxx/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.clgl.CarInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/clxx/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.clgl.CarInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/clgl/clxx/initList.do</result>
+			<result name="error">/clgl/clxx/initUpdate.do</result>
+		</action>
+		
+		<action name="delete" class="com.disease_control.web.action.clgl.CarInfoAction" method="delete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/clgl/clxx/initList.do</result>
+		</action>
+	</package>
+	
+	<package name="clgl_ycsq" extends="default" namespace="/clgl/ycsq">
+		<action name="initList" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/ycsq/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initApply" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="initApply">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/ycsq/apply.ftl</result>
+		</action>
+
+		<action name="apply" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="apply">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/clgl/ycsq/initList.do</result>
+			<result name="error">/clgl/ycsq/initApply.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/ycsq/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.clgl.CarInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/ycsq/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/clgl/ycsq/initList.do</result>
+			<result name="error">/clgl/ycsq/initUpdate.do</result>
+		</action>
+		
+		<action name="initIdleCarList" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="initIdleCarList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/ycsq/idleCarList.ftl</result>
+		</action>
+		
+		<action name="idleCarList" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="idleCarList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="initCalendar" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="initCalendar">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/ycsq/calendar.ftl</result>
+		</action>
+		
+		<action name="calendar" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="calendar">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="info" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/clgl/ycsq/info.ftl</result>
+		</action>
+		
+		<action name="audit" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="audit">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="cancel" class="com.disease_control.web.action.clgl.CarUseApplyAction" method="cancel">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+	</package>
+	
+</struts>
+

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!-- 人员管理——基本信息 -->
+	<package name="rygl_jbxx" extends="default" namespace="/rygl/jbxx">
+		<action name="initList" class="com.disease_control.web.action.rygl.StaffInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/jbxx/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.rygl.StaffInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.rygl.StaffInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/jbxx/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.rygl.StaffInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/rygl/jbxx/initList.do</result>
+			<result name="error">/rygl/jbxx/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.rygl.StaffInfoAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/jbxx/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.rygl.StaffInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/jbxx/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.rygl.StaffInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/rygl/jbxx/initList.do</result>
+			<result name="error">/rygl/jbxx/initUpdate.do</result>
+		</action>
+
+		<action name="del" class="com.disease_control.web.action.rygl.StaffInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="ajaxList" class="com.disease_control.web.action.rygl.StaffInfoAction" method="ajaxList">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+
+		<action name="ajaxList1" class="com.disease_control.web.action.rygl.StaffInfoAction" method="ajaxList1">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+
+		<action name="ajaxList2" class="com.disease_control.web.action.rygl.StaffInfoAction" method="ajaxList2">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+
+		<action name="ajaxList3" class="com.disease_control.web.action.rygl.StaffInfoAction" method="ajaxList3">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.rygl.StaffInfoAction" method="del">
+			<interceptor-ref name="yakovStack" />
+			<interceptor-ref name="loginLimits" />
+		</action>
+		
+		<action name="initImportIndexNum" class="com.disease_control.web.action.rygl.StaffInfoAction" method="initImportIndexNum">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/jbxx/importIndexNum.ftl</result>
+		</action>
+		
+		<action name="importIndexNum" class="com.disease_control.web.action.rygl.StaffInfoAction" method="importIndexNum">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/rygl/jbxx/initList.do</result>
+			<result name="error">/rygl/jbxx/initImportIndexNum.do</result>
+		</action>
+	</package>
+	
+	
+	<!-- 人员管理——分管范围-->
+	<package name="rygl_fgfw" extends="default" namespace="/rygl/fgfw">
+		<action name="initList" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/fgfw/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/fgfw/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/rygl/fgfw/initList.do</result>
+			<result name="error">/rygl/fgfw/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/fgfw/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/rygl/fgfw/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/rygl/fgfw/initList.do</result>
+			<result name="error">/rygl/fgfw/initUpdate.do</result>
+		</action>
+
+		<action name="del" class="com.disease_control.web.action.rygl.ChargeRangeAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/rygl/fgfw/list.do</result>
+			<result name="error">/rygl/fgfw/list.do</result>
+		</action>
+	</package>
+
+</struts>
+

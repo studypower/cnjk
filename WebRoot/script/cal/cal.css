@@ -1,0 +1,124 @@
+* {
+	font-size: 12px;
+}
+
+a {
+	color: Blue
+}
+
+.aorange {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.tablecalc {
+	width: 375px;
+}
+
+.tablecalc td {
+	border: 1px solid Teal;
+	width: 70px;
+	height: 40px;
+	text-align: center;
+}
+
+.tablecalc td span font {
+	font-size: 14px;
+}
+
+.tablecalc td span b {
+	font-size: 8px;
+}
+
+.fontsd {
+	font-family: "Arial Black";
+	line-height: 100%;
+}
+
+
+
+.fontsd.status1 {
+	background-color: #FF8F59
+}
+
+.fontsd.status2 {
+	background-color: #81C0C0
+}
+
+.fontsd.status3 {
+	background-color: #A8FF24
+}
+.fontsd:HOVER,.fontsd.active {
+	background-color: #FFF4C1;
+}
+.fontld {
+	font-size: 14px;
+}
+
+div#datedetail span {
+	color: #0132B4;
+}
+
+#calendarhead {
+	color: #fafbfb;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background-color: #0978a6;
+}
+
+#calendarhead tr td {
+	width: 70px;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 1px;
+}
+
+#keleyi {
+	float: left;
+	width: 160px;
+}
+
+#caltoday {
+	padding-top: 8px;
+	height: 30px;
+}
+
+div#panel {
+	margin: 0;
+	padding: 30px;
+	float: left;
+}
+
+div#panel div {
+	color: Maroon;
+	padding: 3px 5px 3px 5px;
+	margin-top: 20px;
+	background: #ccc;
+	border: 1px solid #e0e0e0;
+	font-size: 9pt;
+	cursor: pointer;
+}
+
+#week {
+	background-color: #fcfcfc;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#week tr td {
+	padding: 1px;
+	margin: 0;
+	width: 70px;
+	border-bottom: 1px solid #efefef;
+	border-left: 1px solid #efefef;
+}
+
+.tr2 td {
+	background-color: #e8f5f9;
+}
+
+.todyaColor {
+	BACKGROUND-COLOR: aqua
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+
+	<package name="login" extends="default" namespace="/">
+		<action name="initLogin" class="com.disease_control.web.action.LoginAction" method="initLogin">
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="login" class="com.disease_control.web.action.LoginAction" method="login">
+			<interceptor-ref name="yakovStack"/>
+			<result type="freemarker" name="success">/page/index.ftl</result>
+			<result type="freemarker" name="error">/page/login.ftl</result>
+		</action>
+		
+		<action name="logOut" class="com.disease_control.web.action.LoginAction" method="logOut">
+			<interceptor-ref name="yakovStack"/>
+			<result type="freemarker" name="success">/page/login.ftl</result>
+		</action>
+		
+		<action name="loadMsgNum" class="com.disease_control.web.action.LoginAction" method="loadMsgNum">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="initMsgList" class="com.disease_control.web.action.LoginAction" method="initMsgList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/msg_list.ftl</result>
+		</action>
+		
+		<action name="msgList" class="com.disease_control.web.action.LoginAction" method="msgList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="readMsg" class="com.disease_control.web.action.LoginAction" method="readMsg">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="delMsg" class="com.disease_control.web.action.LoginAction" method="delMsg">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="msgInfo" class="com.disease_control.web.action.LoginAction" method="msgInfo">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/msg_info.ftl</result>
+		</action>
+		
+	</package>
+
+</struts>
+

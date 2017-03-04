@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!-- 经费管理 -->
+	<package name="jfgl" extends="default" namespace="/jfgl">
+		
+		<action name="initSearch" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="initSearch">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/jfgl/search.ftl</result>
+		</action>
+
+		<action name="search" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="search">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+		<action name="exportData" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="exportData">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	
+		<action name="initList" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/jfgl/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/jfgl/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/jfgl/initList.do</result>
+			<result name="error">/jfgl/initAdd.do</result>
+		</action>
+
+		<action name="initApproval" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="initApproval">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/jfgl/approval.ftl</result>
+		</action>
+
+		<action name="approval" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="approval">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/jfgl/initList.do</result>
+			<result name="error">/jfgl/initApproval.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/jfgl/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/jfgl/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/jfgl/initList.do</result>
+			<result name="error">/jfgl/initUpdate.do</result>
+		</action>
+		
+		<action name="del" class="com.disease_control.web.action.jfgl.FundsApplyInfoAction" method="del">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+	</package>
+	
+	<!-- 经费管理——日志 -->
+	<package name="jfgl_log" extends="default" namespace="/jfgl/log">
+		<action name="info" class="com.disease_control.web.action.jfgl.FundsApplyInfoLogAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/jfgl/log.ftl</result>
+		</action>
+	</package>
+
+</struts>
+

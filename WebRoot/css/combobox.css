@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+.custom-combobox {
+	position: relative;
+	display: inline-block;
+	font-size: 12px;
+	font-family: 'yakov_wryh';
+}
+
+.custom-combobox-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: -1px;
+	padding: 0;
+	/* support: IE7 */
+	*height: 1.7em;
+	*top: 0.1em;
+}
+
+.custom-combobox-input {
+	margin: 0;
+	padding: 0.3em;
+}
+
+
+.ui-menu .ui-menu-item a {
+    display: block;
+    font-weight: normal;
+    line-height: 1.5;
+    min-height: 0;
+    padding: 2px 0.4em;
+    text-decoration: none;
+    font-size: 12px;
+	font-family: 'yakov_wryh';
+	width:100%;
+}
+
+.ui-autocomplete {
+    /*max-height: 200px;*/
+    width:180px;
+    overflow-y: auto;
+    max-width: 200px;
+    overflow-x: hidden;
+    /* support: IE6 */
+    height: 300px;
+}

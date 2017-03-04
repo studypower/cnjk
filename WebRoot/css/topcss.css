@@ -1,0 +1,48 @@
+@charset "utf-8";
+a{ color:#666; text-decoration:none; }
+a:hover{ color:#2383c0; }
+a img{border:none;}
+table{empty-cells:show;border-collapse:collapse;}
+
+#top{ width:auto; height:104px; margin:0 auto; min-width:1024px; background:url(../images/header-bg.gif) top center;}
+.topimg{ border:0px; vertical-align:text-top; float:left;padding-left:40px; }
+#top p{ color:#fff; font-size:26px; font-weight:400;text-align:left; font-family:"΢���ź�"; line-height:64px;}
+.logo{ width:100%;height:64px; min-width:800px; margin:0 auto;}
+.logoname{ width:auto; height:65px; float:left}
+#leftlogo{ width:auto; /**height:104px;**/ overflow:hidden; float:left;margin-top: 2px;}
+ul#menu{ float: left;   font-size:14px; font-family:"΢���ź�"; font-weight:400; display:block; margin-top:8px;}
+ul#menu li{ padding-left:5px; margin-right:5px; background:url(../images/tab-left.gif) no-repeat top left; float:left; color:#fff}
+ul#menu li a{ padding:7px 9px 6px 4px; display:block; background:url(../images/tab-right.gif) no-repeat right top; float:left; color:#fff; }
+ul#menu li a:visited{padding:7px 9px 6px 4px; display:block; background:url(../images/tab-right.gif) no-repeat right top; float:left; color:#fff;}
+ul#menu li a:hover{padding:7px 9px 6px 4px;}
+ul#menu li.current{background:url(../images/tab-active-left.gif) no-repeat left top; color:#040404}
+ul#menu li.current a{background:url(../images/tab-active-right.gif) no-repeat right top; color:#040404} 
+ul#menu li.current a:hover{background:url(../images/tab-active-right.gif) no-repeat right top; color:#040404}
+
+.info{ float:right; width:auto; overflow:hidden; text-align:right; vertical-align:top; line-height:25px; padding-right:5px; font-size:14px; color:#fff;}
+.info a{  font-size:12px; color:#fff;}
+.info a:hover{  font-size:12px; color:#fff;}
+.info img{ vertical-align:text-bottom; padding-top:5px;}
+
+#bottom{ width:100%; height:30px; color:#fff;background:url(../images/header-bg.gif) center center; font-family:"΢���ź�"; font-size:14px; line-height:30px;text-align:center;}
+
+.navigationDiv{width:15%;float:left;}
+
+.IFrameDiv{float:left;width:85%;height:504px;overflow:hidden;}
+
+.MainFrame{width:100%;height:100%;}
+
+.parentBottomDiv{height:5%;}
+
+.main_div{margin:0 auto; margin:1px;height:100%;}
+
+
+.TopParentDiv{height:110px;}
+
+
+.clear_both_div{clear:both;heigth:0;width:0;display:none;}
+
+
+.hideDiv{display:none;}
+
+.showDiv{display:block;}

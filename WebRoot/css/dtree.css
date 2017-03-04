@@ -1,0 +1,66 @@
+/*--------------------------------------------------|
+| dTree 2.05 | www.destroydrop.com/javascript/tree/ |
+|---------------------------------------------------|
+| Copyright (c) 2002-2003 Geir Landr?              |
+|--------------------------------------------------*/
+body,html{
+	background:#f7fcff; 
+	}
+.dtree {
+		width:197px; 
+		height:100%;
+		overflow:hidden; 
+		background:#f7fcff; 
+		float:left; 
+		text-align:left;
+		padding:10px;
+		margin:0px 0px;
+		_margin:10px 5px 0px 5px;
+		border-radius:3px;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+		-webkit-box-shadow: 0 0 5px rgba(189, 189, 189, 0.4);
+		-moz-box-shadow: 0 0 5px rgba(189, 189, 189, 0.4);
+		font-size:14px;
+	    font-family:"微软雅黑";
+	    text-decoration:none;
+		line-height:35px;
+		_line-height:35px;
+		color: #5b5b5b;
+}
+.dtree img {
+	border: 0px;
+	vertical-align: middle;
+	padding-right:5px;
+	
+}
+.dtree a {
+	color: #5b5b5b;
+	text-decoration: none;
+	line-height:35px;
+	font-size:14px;
+    font-family:"微软雅黑";
+	_line-height:35px;
+}
+.dtree a.node, .dtree a.nodeSel {
+	white-space: nowrap;
+	line-height:35px;
+	_line-height:35px;
+	font-size:14px;
+    font-family:"微软雅黑";
+ }
+.dtree a.node:hover, .dtree a.nodeSel:hover {
+	color: #5b5b5b;
+	text-decoration: underline;
+	line-height:35px;
+	_line-height:35px;
+	font-size:14px;
+    font-family:"微软雅黑";
+}
+.dtree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.dtree .clip {
+	overflow: hidden;
+}

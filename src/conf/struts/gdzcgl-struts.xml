@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<package name="gdzcgl_zcxx" extends="default" namespace="/gdzcgl/zcxx">
+		<action name="initList" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gdzcgl/zcxx/list.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gdzcgl/zcxx/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gdzcgl/zcxx/initList.do</result>
+			<result name="error">/gdzcgl/zcxx/initAdd.do</result>
+		</action>
+
+		<action name="info" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gdzcgl/zcxx/info.ftl</result>
+		</action>
+
+		<action name="initUpdate" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="initUpdate">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gdzcgl/zcxx/update.ftl</result>
+		</action>
+
+		<action name="update" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="update">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gdzcgl/zcxx/initList.do</result>
+			<result name="error">/gdzcgl/zcxx/initUpdate.do</result>
+		</action>
+		
+		<action name="delete" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="delete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gdzcgl/zcxx/initList.do</result>
+		</action>
+		
+		<action name="initUpdateStatus" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="initUpdateStatus">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gdzcgl/zcxx/updateStatus.ftl</result>
+		</action>
+		
+		<action name="updateStatus" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="updateStatus">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gdzcgl/zcxx/initList.do</result>
+			<result name="error">/gdzcgl/zcxx/initUpdateStatus.do</result>
+		</action>
+		
+		<action name="initIntroduction" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="initIntroduction">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gdzcgl/zcxx/dr.ftl</result>
+		</action>
+		
+		<action name="introduction" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="introduction">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload">  
+                 <param name="allowedTypes">text/csv,application/vnd.ms-excel</param>  
+            </interceptor-ref>
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/gdzcgl/zcxx/initList.do</result>
+		</action>
+		
+		<action name="export1" class="com.disease_control.web.action.gdzcgl.AssetsInfoAction" method="export1">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/gdzcgl/zcxx/export1.ftl</result>
+		</action>
+		
+	</package>
+	
+</struts>
+

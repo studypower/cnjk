@@ -1,0 +1,17 @@
+update department_info d set d.iskqsyshow='1',d.kqsyorder='1' where d.name='中心领导';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='2' where d.name='行政办公室';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='3' where d.name='综合业务办';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='4' where d.name='财务科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='5' where d.name='人事科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='6' where d.name='质管科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='7' where d.name='传染病防制科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='8' where d.name='免疫预防科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='9' where d.name='性艾结防科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='10' where d.name='慢性病防制科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='11' where d.name='眼牙防科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='12' where d.name='公共卫生监测管理科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='13' where d.name='健康教育科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='14' where d.name='微检科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='15' where d.name='理化科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='16' where d.name='生命统计科';
+update department_info d set d.iskqsyshow='1',d.kqsyorder='17' where d.name='病媒消毒科';

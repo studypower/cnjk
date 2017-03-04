@@ -1,0 +1,64 @@
+ALTER TABLE `car_use_apply`
+ADD COLUMN `is_read`  int NULL DEFAULT 0 COMMENT '是否已读，0:未读 ,1:已读，' AFTER `status`;
+
+update car_use_apply as cua set cua.is_read='1'; 
+
+ALTER TABLE `meeting_room_apply`
+ADD COLUMN `is_read`  int NULL DEFAULT 0 COMMENT '是否已读，0:未读, 1:已读' AFTER `status`;
+
+update meeting_room_apply as cua set cua.is_read='1'; 
+
+
+-- 将当前时间以前的状态表中 ，小分队听班 领导值班修改为在岗状态
+update oa_attendance_info oa set oa.attendance_status='1',oa.onduty_type=null,oa.balance_status='1' where oa.is_delete='0' and oa.attendance_status='5' and oa.onduty_type in ('1','2') and oa.attendance_time<now();
+-- 将当前时间以后的状态表中 ，小分队听班 领导值班修改为删除状态
+update oa_attendance_info oa set oa.is_delete='1' where oa.is_delete='0' and oa.attendance_status='5' and oa.onduty_type in ('1','2') and oa.attendance_time>=now();
+
+-- 清楚角色和考勤 值班 首页权限的关系
+delete from role_menu where menu_key like '9%';
+delete from role_menu where menu_key like '10%';
+delete from role_menu where menu_key like '11%';
+delete from role_menu where menu_key like '12%';
+
+-- 清楚人员和考勤 值班 首页权限的关系
+delete from user_menu where menu_key like '9%';
+delete from user_menu where menu_key like '10%';
+delete from user_menu where menu_key like '11%';
+delete from user_menu where menu_key like '12%';
+
+-- 清楚考勤 值班 首页资源配置
+delete from menu_info where `key` like '9%';
+delete from menu_info where `key` like '10%';
+delete from menu_info where `key` like '11%';
+delete from menu_info where `key` like '12%';
+
+-- 创建新的菜单资源
+
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('9', '首页', NULL, NULL, '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10', '考勤管理', NULL, NULL, '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11', '值班管理', NULL, NULL, '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('12', '通知公告', NULL, NULL, '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('9_1', '考勤首页弹出框', NULL, '9', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_1', '状态日历查询', NULL, '10', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_2', '状态日历维护', NULL, '10', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_3', '工作日管理', NULL, '10', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_1', '值班综合查询', NULL, '11', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_2', '值班费统计', NULL, '11', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_3', '调休单统计', NULL, '11', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_4', '值班维护', NULL, '11', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_5', '值班日历维护', NULL, '11', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('12_1', '通知公告', NULL, '12', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_1_1', '查看基础信息', NULL, '10_1', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_1_2', '查看值班结算', NULL, '10_1', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_1_3', '查看备注', NULL, '10_1', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_2_1', '查看和修改基础信息及备注', NULL, '10_2', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_2_2', '查看和修改值班结算', NULL, '10_2', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_2_3', '考勤科室管理', NULL, '10_2', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('10_2_4', '考勤单位管理', NULL, '10_2', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_4_1', '领导值班', NULL, '11_4', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_4_2', '小分队听班', NULL, '11_4', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('11_4_3', '总值班', NULL, '11_4', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('12_1_1', '查看', NULL, '12_1', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('12_1_2', '新增和修改', NULL, '12_1', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('12_1_3', '置顶', NULL, '12_1', '1');
+INSERT INTO `menu_info` (`key`, `name`, `url`, `parent_key`, `status`) VALUES ('12_1_4', '删除', NULL, '12_1', '1');

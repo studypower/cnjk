@@ -1,0 +1,38 @@
+-- 对象重复的值班人员进行处理，将状态中的总值班重复设置进行还原
+UPDATE oa_attendance_info a
+SET a.is_delete = '0'
+WHERE
+	a.onduty_type = '3'
+AND a.is_delete = '1'
+AND (
+	a.staff_info_id,
+	DATE_FORMAT(
+		a.attendance_time,
+		'%Y-%m-%d'
+	)
+) IN (
+	SELECT
+		i.staff_info_id,
+		DATE_FORMAT(i.on_duty_time, '%Y-%m-%d') on_duty_time
+	FROM
+		oa_onduty_info i
+	WHERE
+		i.is_delete = '0'
+	GROUP BY
+		i.on_duty_time,
+		i.staff_info_id
+	HAVING
+		count(*) > 1
+)
+AND a.attendance_time > now()
+AND DATE_FORMAT(a.create_time, '%Y%m%d%H') = '2014122916';
+
+-- 高祯值班数据的还原
+update oa_attendance_info a set a.is_delete='0' where id in('15156','15157','15158','15159');
+update oa_attendance_info a set a.is_delete='1' where id in('30992','30993','30994','30995');
+
+
+DELETE from menu_info where `key`='12_1';-- 二级菜单中的通知公告作废
+update menu_info set parent_key='12' where parent_key='12_1'; -- 将原有的三级菜单设置为二级内容
+delete from role_menu where menu_key='12_1';-- 清理多余的通知公告
+delete from user_menu where menu_key ='12_1';-- 清理多余的通知公告

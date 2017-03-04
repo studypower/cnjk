@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "./dtd/struts-2.0.dtd">
+
+<struts>
+	<!--物品采购申请 -->
+	<package name="wpcg" extends="default" namespace="/wpcg">
+		<action name="initList" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/list.ftl</result>
+			<result type="freemarker" name="list5">/page/wpcg/list5.ftl</result>
+			<result type="freemarker" name="list6">/page/wpcg/list6.ftl</result>
+		</action>
+
+		<action name="list" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="list">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initfundsApplyInfoList" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initfundsApplyInfoList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/fundsApplyInfoList.ftl</result>
+		</action>
+
+		<action name="fundsApplyInfoList" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="fundsApplyInfoList">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+
+		<action name="initAdd" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initAdd">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/add.ftl</result>
+		</action>
+
+		<action name="add" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="add">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do?step=-1</result>
+			<result name="error">/wpcg/initAdd.do</result>
+		</action>
+		
+		<action name="initAddSupplier" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initAddSupplier">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/add_supplier.ftl</result>
+		</action>
+		
+		<action name="addSupplier" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="addSupplier">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do?step=1&amp;fundsApplyId=-100&amp;type=0</result>
+			<result name="success1">/wpcg/initList.do?step=1&amp;fundsApplyId=-100&amp;type=3</result>
+			<result name="error">/wpcg/initAddSupplier.do</result>
+		</action>
+		
+		<action name="initAddZczl" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initAddZczl">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/add_zczl.ftl</result>
+		</action>
+		
+		<action name="addZczl" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="addZczl">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do?step=1&amp;fundsApplyId=-100&amp;type=2</result>
+			<result name="error">/wpcg/initAddZczl.do</result>
+		</action>
+		
+		<action name="initAudit" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initAudit">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/audit.ftl</result>
+		</action>
+
+		<action name="audit" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="audit">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do</result>
+		</action>
+		
+		<action name="initCentralPurchasing" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initCentralPurchasing">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/central_purchasing.ftl</result>
+		</action>
+
+		<action name="centralPurchasing" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="centralPurchasing">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do</result>
+		</action>
+		
+		<action name="initUpdateStatus" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initUpdateStatus">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/updateStatus.ftl</result>
+		</action>
+
+		<action name="updateStatus" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="updateStatus">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do</result>
+			<result name="error">/wpcg/initUpdateStatus.do</result>
+		</action>
+		
+		<action name="initAcceptance" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initAcceptance">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/acceptance.ftl</result>
+		</action>
+
+		<action name="acceptance" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="acceptance">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="fileUpload" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do</result>
+		</action>
+		
+		<action name="initStorage" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="initStorage">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/storage.ftl</result>
+		</action>
+
+		<action name="storage" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="storage">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result name="success">/wpcg/initList.do</result>
+		</action>
+		
+		<action name="info" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="info">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/info.ftl</result>
+		</action>
+		
+		<action name="delete" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="delete">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+			<result type="freemarker" name="success">/page/wpcg/info.ftl</result>
+		</action>
+		
+	   <action name="exportData" class="com.disease_control.web.action.wpcg.PurchaseOrderAction" method="exportData">
+			<interceptor-ref name="loginLimits" />
+			<interceptor-ref name="yakovStack" />
+		</action>
+		
+	</package>
+
+</struts>
+
